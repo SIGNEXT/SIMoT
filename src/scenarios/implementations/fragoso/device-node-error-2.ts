@@ -1,5 +1,6 @@
 import { DeviceNodeFailBehaviour, ProbabilisticFailBehaviour } from "../../../behaviours/device";
 import Device from "../../../device/device";
+import BasicDevice from "../../../device/specific-devices/basicDevice";
 import Node from "../../../node";
 import { Scenario } from "../../scenario";
 
@@ -13,13 +14,13 @@ export default () => {
     }
 
     const devices = [
-        new Device(1, { capabilities: ["t1", "t2", "t3"], syncBehaviours: [new DeviceNodeFailBehaviour(1)],
+        new BasicDevice(1, { capabilities: ["t1", "t2", "t3"], syncBehaviours: [new DeviceNodeFailBehaviour(1)],
             asyncBehaviours: [new ProbabilisticFailBehaviour(0.03, 5000, 10000)] }),
-        new Device(2, { capabilities: ["t1", "t2", "t3"], syncBehaviours: [new DeviceNodeFailBehaviour(4)],
+        new BasicDevice(2, { capabilities: ["t1", "t2", "t3"], syncBehaviours: [new DeviceNodeFailBehaviour(4)],
             asyncBehaviours: [new ProbabilisticFailBehaviour(0.03, 5000, 10000)]  }),
-        new Device(3, { capabilities: ["t1", "t2", "t3"], syncBehaviours: [new DeviceNodeFailBehaviour(7)],
+        new BasicDevice(3, { capabilities: ["t1", "t2", "t3"], syncBehaviours: [new DeviceNodeFailBehaviour(7)],
             asyncBehaviours: [new ProbabilisticFailBehaviour(0.03, 5000, 10000)]  }),
-        new Device(4, { capabilities: ["t1", "t2", "t3"],
+        new BasicDevice(4, { capabilities: ["t1", "t2", "t3"],
             syncBehaviours: [new DeviceNodeFailBehaviour(10), new DeviceNodeFailBehaviour(12)],
             asyncBehaviours: [new ProbabilisticFailBehaviour(0.03, 5000, 10000)]  }),
     ];

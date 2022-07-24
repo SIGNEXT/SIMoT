@@ -59,7 +59,7 @@ class Scenario implements JSONAble {
         if(!this.noOrchestrator) {
             const orchestratorDevice: OrchestratorDevice = new OrchestratorDevice(-1, { capabilities: [], syncBehaviours: [], asyncBehaviours: this.orchBehaviours }, params.version || 'v5', true);
             this.centralOrchestrator = orchestratorDevice.ownOrchestrator;
-            this.devices.unshift(orchestratorDevice);
+            // this.devices.unshift(orchestratorDevice);
             orchestratorDevice.start(this, this.mqttBroker);
             this.centralOrchestrator.reset(this.nodes)
         }

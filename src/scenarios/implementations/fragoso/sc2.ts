@@ -1,5 +1,6 @@
 import { SingleFailBehaviour } from "../../../behaviours/device";
 import Device from "../../../device/device";
+import BasicDevice from "../../../device/specific-devices/basicDevice";
 import Node from "../../../node";
 import { Scenario } from "../../scenario";
 
@@ -13,10 +14,10 @@ export default () => {
     }
 
     const devices = [
-        new Device(1, { capabilities: ["t1", "t2", "t3"], asyncBehaviours: [new SingleFailBehaviour(15000, 15000)] }),
-        new Device(2, { capabilities: ["t1", "t2", "t3"], asyncBehaviours: [new SingleFailBehaviour(45000, 15000)] }),
-        new Device(3, { capabilities: ["t1", "t2", "t3"], asyncBehaviours: [new SingleFailBehaviour(75000, 15000)] }),
-        new Device(4, { capabilities: ["t1", "t2", "t3"], asyncBehaviours: [new SingleFailBehaviour(105000, 15000)] }),
+        new BasicDevice(1, { capabilities: ["t1", "t2", "t3"], asyncBehaviours: [new SingleFailBehaviour(15000, 15000)] }),
+        new BasicDevice(2, { capabilities: ["t1", "t2", "t3"], asyncBehaviours: [new SingleFailBehaviour(45000, 15000)] }),
+        new BasicDevice(3, { capabilities: ["t1", "t2", "t3"], asyncBehaviours: [new SingleFailBehaviour(75000, 15000)] }),
+        new BasicDevice(4, { capabilities: ["t1", "t2", "t3"], asyncBehaviours: [new SingleFailBehaviour(105000, 15000)] }),
     ];
     return new Scenario("sc2", nodes,  devices);
 };

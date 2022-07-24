@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
 run_exp() {
-		npm start -- run $1 -c -t 300 -o $2
+		node build/index.js run $1 -c -t 300 -o $2
 }
+
+tsc
 
 run_exp sc1 v0 & \
 run_exp sc2 v0 & \

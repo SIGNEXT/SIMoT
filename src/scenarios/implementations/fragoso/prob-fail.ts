@@ -1,5 +1,6 @@
 import { ProbabilisticFailBehaviour } from "../../../behaviours/device";
 import Device from "../../../device/device";
+import BasicDevice from "../../../device/specific-devices/basicDevice";
 import Node from "../../../node";
 import { Scenario } from "../../scenario";
 
@@ -14,7 +15,7 @@ export default () => {
 
     const devices = [];
     for (let i = 1; i <= 50; ++i) {
-        devices.push(new Device(i,
+        devices.push(new BasicDevice(i,
             { capabilities: ["t1", "t2", "t3"], asyncBehaviours: [new ProbabilisticFailBehaviour(0.05, 0, 10000)] },
         ));
     }
