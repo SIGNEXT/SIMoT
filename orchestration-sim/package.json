@@ -1,0 +1,40 @@
+{
+  "name": "orchestration-sim",
+  "version": "1.0.0",
+  "description": "IoT orchestration simulator",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "tsc && node build/index.js",
+    "start-no-build": "node build/index.js",
+    "dev": "nodemon src/index.ts",
+    "mutate": "stryker run",
+    "build": "tsc",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/commander": "^2.12.2",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^14.14.32",
+    "@types/sha1": "^1.1.3",
+    "@types/winston": "^2.4.4",
+    "babel-jest": "^27.5.1",
+    "eslint": "^7.22.0",
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  },
+  "depedencies": {
+    "commander": "^7.2.0"
+  },
+  "dependencies": {
+    "sha1": "^1.1.1",
+    "winston": "^3.6.0"
+  }
+}
