@@ -9,8 +9,12 @@ import { Scenario } from "./scenario";
 
 class ScenarioGenerator {
     public static generate(n = 1) {
+        if (!fs.existsSync("./synthetic-scenarios"))
+            fs.mkdirSync("./synthetic-scenarios")
+
         const files = fs.readdirSync("./synthetic-scenarios");
         const baseNumber = files.length;
+
         for (let i = 0; i < n; ++i) {
             const number = baseNumber + i;
             const name = `synth-${number.toString().padStart(3, "0")}`;
