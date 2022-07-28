@@ -1,5 +1,5 @@
-import { DeviceStatus } from "../device/deviceTypes"
-import Node from "../node";
+import { DeviceStatus } from '../device/deviceTypes'
+import Node from '../node'
 
 type DeviceData = {
   id: number,
@@ -23,4 +23,4 @@ interface EnhancedDeviceData extends DeviceData {
 }
 
 
-export { DeviceData, EnhancedDeviceData };
+export { DeviceData, EnhancedDeviceData }

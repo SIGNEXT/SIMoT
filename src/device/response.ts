@@ -7,25 +7,25 @@ enum DeviceResponseStatus {
 
 class DeviceResponse {
 
-    public readonly status: DeviceResponseStatus;
-    public readonly data: any;
+    public readonly status: DeviceResponseStatus
+    public readonly data: any
 
     constructor(status: DeviceResponseStatus, data: any) {
-        this.status = status;
-        this.data = data;
+        this.status = status
+        this.data = data
     }
 
     static success(data?: any) {
-        return new DeviceResponse(DeviceResponseStatus.SUCCESS, data);
+        return new DeviceResponse(DeviceResponseStatus.SUCCESS, data)
     }
 
     static memError(data?:any) {
-        return new DeviceResponse(DeviceResponseStatus.MEM_ERROR, data);
+        return new DeviceResponse(DeviceResponseStatus.MEM_ERROR, data)
     }
 
     static fail(data?: any) {
-        return new DeviceResponse(DeviceResponseStatus.FAIL, data);
+        return new DeviceResponse(DeviceResponseStatus.FAIL, data)
     }
 }
 
-export { DeviceResponse, DeviceResponseStatus };
+export { DeviceResponse, DeviceResponseStatus }

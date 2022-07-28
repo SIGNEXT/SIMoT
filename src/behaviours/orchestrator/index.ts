@@ -1,4 +1,4 @@
-import { SingleFailOrchBehaviour } from "./single-fail";
+import { SingleFailOrchBehaviour } from './single-fail'
 
 const  behaviours: {[type: string]: any} = {
     SingleFailOrchBehaviour
@@ -8,4 +8,3 @@ export {
     SingleFailOrchBehaviour,
     behaviours
 }
-

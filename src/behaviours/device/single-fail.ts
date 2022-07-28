@@ -1,46 +1,46 @@
-import Behaviour from "./behaviour";
+import Behaviour from './behaviour'
 
-const DEFAULT_FAIL = 1000;
-const DEFAULT_BOOT_TIME = 2000;
+const DEFAULT_FAIL = 1000
+const DEFAULT_BOOT_TIME = 2000
 
 class SingleFailBehaviour extends Behaviour {
 
-    private hasFailed: boolean;
-    private memError: boolean;
-    private bootTime: number;
-    private timeToFailure: number;
+    private hasFailed: boolean
+    private memError: boolean
+    private bootTime: number
+    private timeToFailure: number
 
     constructor(timeToFailure = DEFAULT_FAIL, bootTime = DEFAULT_BOOT_TIME, memError = false) {
-        super();
-        this.timeToFailure = timeToFailure;
-        this.bootTime = bootTime;
-        this.memError = memError;
-        this.hasFailed = false;
+        super()
+        this.timeToFailure = timeToFailure
+        this.bootTime = bootTime
+        this.memError = memError
+        this.hasFailed = false
     }
 
     override run(): void {
-        if (this.hasFailed) return;
+        if (this.hasFailed) return
         setTimeout(() => {
-            this.device.turnOff(this.memError);
-            this.hasFailed = true;
+            this.device.turnOff(this.memError)
+            this.hasFailed = true
             if (this.bootTime > 0) {
-                setTimeout(() => { this.device.turnOn(this.memError) }, this.bootTime);
+                setTimeout(() => { this.device.turnOn(this.memError) }, this.bootTime)
             }
-        }, this.timeToFailure);
+        }, this.timeToFailure)
     }
 
     override toJSON() {
         return {
-            type: "SingleFailBehaviour",
+            type: 'SingleFailBehaviour',
             failIn: this.timeToFailure,
             bootTime: this.bootTime,
             memError: this.memError,
-        };
+        }
     }
 
     static fromJSON(jsonData: { failIn: number, bootTime: number, memError: boolean }) {
-        return new SingleFailBehaviour(jsonData.failIn, jsonData.bootTime, jsonData.memError);
+        return new SingleFailBehaviour(jsonData.failIn, jsonData.bootTime, jsonData.memError)
     }
 }
 
-export { SingleFailBehaviour };
+export { SingleFailBehaviour }

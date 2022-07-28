@@ -1,5 +1,5 @@
-import Device from "../device";
-import { DeviceAnnouncement, DeviceParams } from "../deviceTypes";
+import Device from '../device'
+import { DeviceAnnouncement, DeviceParams } from '../deviceTypes'
 
 class BasicDevice extends Device {
   constructor(
@@ -10,10 +10,10 @@ class BasicDevice extends Device {
   }
 
   override async onStart(fail: boolean = false): Promise<void> {
-    const announcement: DeviceAnnouncement = { failure: fail, device: this };
-    await this.mqttClient?.publish("ANNOUNCE", announcement);
-    return Promise.resolve();
+    const announcement: DeviceAnnouncement = { failure: fail, device: this }
+    await this.mqttClient?.publish('ANNOUNCE', announcement)
+    return Promise.resolve()
   }
 }
 
-export default BasicDevice;
+export default BasicDevice

@@ -1,7 +1,5 @@
 # Orchestration simulator
 
-⚠️ For the original simulator by Tiago Fragoso visit [this repository](https://github.com/S-R-MSc/2021-tiagofragoso) ⚠️
-
 ## Setup
 
 Make sure Node.js `>= 14.15.4` and yarn is installed and run:
@@ -27,6 +25,15 @@ Options:
   -t, --time-limit <limit>  time limit
   -o, --orchestrator <type>  (choices: "v0", "v1", "v2", "v3", "v4", "v5")
 ```
+
+Example:
+
+```bash
+yarn start run balancing -t 10 -o v1 -c
+
+```
+
+Results will be saved into ```measurements``` folder.
 
 2. Generating synthetic scenarios
 

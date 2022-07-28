@@ -1,6 +1,6 @@
-import Behaviour from "../behaviours/device/behaviour"
-import Device from "./device"
-import Node from "../node"
+import Behaviour from '../behaviours/device/behaviour'
+import Device from './device'
+import Node from '../node'
 
 enum DeviceStatus {
   ON,

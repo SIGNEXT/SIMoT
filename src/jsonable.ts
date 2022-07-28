@@ -2,4 +2,4 @@ interface JSONAble {
   toJSON(): Object 
 }
 
-export default JSONAble;
+export default JSONAble

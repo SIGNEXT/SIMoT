@@ -5,4 +5,3 @@ synthetic-scenarios
 __pycache__
 keep_experiments
 measurements
-plotting/results

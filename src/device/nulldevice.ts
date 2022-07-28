@@ -1,22 +1,22 @@
-import Device from "./device";
+import Device from './device'
 
 class NullDevice extends Device {
 
   constructor() {
-    super(-1, { capabilities: []});
+    super(-1, { capabilities: []})
   }
 
   public turnOff(): void {
-    return;
+    return
   }
 
   public turnOn(fail = false): void {
-    return;
+    return
   }
 
   public restart(bootTimeMs: number = 1000): void {
-    return;
+    return
   }
 }
 
-export { NullDevice };
+export { NullDevice }
