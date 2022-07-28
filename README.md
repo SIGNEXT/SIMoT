@@ -1,4 +1,4 @@
-# Orchestration simulator
+<img src="assets/simot.svg">
 
 ## Setup
 
